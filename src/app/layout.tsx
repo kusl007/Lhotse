@@ -1,6 +1,13 @@
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+
+
+import Footer from "../components/StickyFooter"
+import TrekNavbar from "../components/TrekNavbar"
+
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,8 +22,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" >
+      <body  className="min-width-[100vh]">
+        <div className="">
+        <TrekNavbar/>
+        </div>
+        
+        {children}
+        <Footer/>
+        </body>
     </html>
   );
 }
